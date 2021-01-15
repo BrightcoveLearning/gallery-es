@@ -1,1 +1,2 @@
-# gallery-es
+# gallery
+Gallery documentation
