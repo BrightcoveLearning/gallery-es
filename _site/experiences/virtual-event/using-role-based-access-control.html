@@ -1,0 +1,876 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Uso del control de acceso basado en roles</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">GALERÍA BRIGHTCOVE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Evento Virtual<a href="/experiences/virtual-event/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Uso del control de acceso basado en roles</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Creación de una experiencia de portal</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Creación de una experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Creación y gestión de experiencias</a></li>
+                  
+                
+                  
+                    <li><a href="/training/gallery-training-videos.html">Videos de formación en Galería</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Introducción a Brightcove Gallery</a></li>
+                  
+                
+                  
+                    <li>Descripción general de las experiencias de la galería<a href="/get-started/overview-gallery-experiences.html"></a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-introduction-gallery.html"> Introducción a la Galería</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-building-portal-experiences-using-gallery.html"> Creación de experiencias de portal</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-building-page-experiences-using-gallery.html"> Creación de experiencias en página</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Experiencias +<a href="/experiences/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      Portal +<a href="/experiences/portal/index.html"><strong></strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Adición de vídeos de Video Cloud</a></li>
+                        
+                        <li><a href="/experiences/portal/adding-videos-portal-experience.html">Adición de vídeos</a></li>
+                        
+                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">Añadir vídeos de YouTube</a></li>
+                        
+                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
+                        
+                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Cambio del diseño del reproductor</a></li>
+                        
+                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Configuración de llamadas a la acción</a></li>
+                        
+                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Configuración de los ajustes de SEO</a></li>
+                        
+                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">Configuración de los detalles de una experiencia</a></li>
+                        
+                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Configuración de seguimiento de terceros</a></li>
+                        
+                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Control del acceso</a></li>
+                        
+                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Creación, edición y publicación de experiencias de portal</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Personalización del aspecto y el comportamiento</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Personalización de la configuración de la plantilla de catálogo</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Personalización de la configuración de la plantilla de Crónica</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Personalización del contenido de las páginas del portal</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Personalización de la configuración de la plantilla de marquesina</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Personalización de la configuración del reproductor y del formulario de prospecto</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Personalización de la configuración del sitio</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Personalización de las características del sitio</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Personalización de la configuración social</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">Personalización del estilo</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Personalización de los ajustes de vídeo y reproducción</a></li>
+                        
+                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Personalización de la configuración de vídeo</a></li>
+                        
+                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Descarga de Vídeos</a></li>
+                        
+                        <li>Exportación de datos de prospecto<a href="/experiences/portal/exporting-gallery-lead-data.html"></a></li>
+                        
+                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indexación de una experiencia de portal</a></li>
+                        
+                        <li>Introducción a las plantillas de Gallery Portal<a href="/experiences/portal/overview-gallery-portal-templates.html"></a></li>
+                        
+                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
+                        
+                        <li>Actualización de plantillas de galería<a href="/experiences/portal/updating-gallery-templates.html"></a></li>
+                        
+                        <li>Uso de un formulario de prospecto<a href="/experiences/portal/using-lead-form-portal-experience.html"></a></li>
+                        
+                        <li>Uso de fuentes personalizadas<a href="/experiences/portal/using-custom-fonts-portal-experience.html"></a></li>
+                        
+                        <li>Uso del Editor de sitios para personalizar una experiencia<a href="/experiences/portal/using-site-editor-customize-portal-experience.html"></a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/experiences/inpage/index.html">En la página <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/experiences/inpage/adding-components-page-experience.html">Adición de componentes</a></li>
+                        
+                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Adición de interacciones</a></li>
+                        
+                        <li><a href="/experiences/inpage/adding-videos-page-experience.html">Adición de vídeos</a></li>
+                        
+                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Configuración de componentes complementarios</a></li>
+                        
+                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">Configuración de los detalles de una experiencia</a></li>
+                        
+                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Configuración de la configuración de una experiencia</a></li>
+                        
+                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Configuración de descargas de vídeo</a></li>
+                        
+                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Creación de temas personalizados</a></li>
+                        
+                        <li><a href="/experiences/inpage/customizing-page-experience.html">Personalización de una experiencia en página</a></li>
+                        
+                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">Personalización del estilo</a></li>
+                        
+                        <li>Descripción general de las plantillas de experiencia en página<a href="/experiences/inpage/overview-gallery-page-experience-templates.html"></a></li>
+                        
+                        <li>Visión general:<a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html"> Creación y publicación de experiencias en página</a></li>
+                        
+                        <li>Vista previa y publicación<a href="/experiences/inpage/previewing-and-publishing-page-experience.html"></a></li>
+                        
+                        <li>Revisión de análisis<a href="/experiences/inpage/reviewing-page-experience-analytics.html"></a></li>
+                        
+                        <li>Revisión de análisis de llamadas a la acción<a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html"></a></li>
+                        
+                        <li>Revisión del panel de Analytics<a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html"></a></li>
+                        
+                        <li>Revisión de análisis de vídeo<a href="/experiences/inpage/reviewing-page-experience-video-analytics.html"></a></li>
+                        
+                        <li>Actualización de plantillas de galería<a href="/experiences/portal/updating-gallery-templates.html"></a></li>
+                        
+                        <li>Uso de modificaciones dinámicas de vídeo<a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html"></a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      Evento en Vivo +<a href="/experiences/live/index.html"><strong></strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Adición de Pigeonhole a una página activa</a></li>
+                        
+                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Adición de Pigeonhole a un portal en vivo</a></li>
+                        
+                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
+                        
+                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Control del acceso</a></li>
+                        
+                        <li><a href="/experiences/live/creating-live-event-page-experience.html">Creación de una experiencia en la página de eventos en vivo</a></li>
+                        
+                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">Creación de una experiencia de portal de eventos en vivo</a></li>
+                        
+                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Creación del estado del evento en vivo</a></li>
+                        
+                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Creación del estado posterior al evento</a></li>
+                        
+                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Creación del estado previo al evento</a></li>
+                        
+                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Personalización de la configuración del portal de eventos en vivo</a></li>
+                        
+                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      Página de aterrizaje +<a href="/experiences/landing/index.html"><strong></strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
+                        
+                        <li><a href="/experiences/landing/creating-landing-page-experience.html">Creación de una experiencia de página de destino</a></li>
+                        
+                        <li>Exportación de datos de prospecto<a href="/experiences/portal/exporting-gallery-lead-data.html"></a></li>
+                        
+                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
+                        
+                        <li>Uso de un formulario de prospecto<a href="/experiences/portal/using-lead-form-portal-experience.html"></a></li>
+                        
+                        <li>Uso del Editor de sitios para personalizar una experiencia<a href="/experiences/portal/using-site-editor-customize-portal-experience.html"></a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">General <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/gallery-system-requirements.html">Requisitos del sistema de Galería</a></li>
+                  
+                
+                  
+                    <li>Solución de problemas de la Galería de Brightcove<a href="/general/troubleshooting-brightcove-gallery-issues.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-gallery-cookies.html">Galletas de Brightcove Gallery</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/settings/index.html">Configuración de la galería <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/settings/configuring-gallery-settings.html">Configuración de la Galería</a></li>
+                  
+                
+                  
+                    <li><a href="/settings/configuring-youtube-settings.html">Configuración de los ajustes de YouTube</a></li>
+                  
+                
+                  
+                    <li><a href="/settings/configuring-access-control-profiles.html">Configuración de perfiles de control de acceso</a></li>
+                  
+                
+                  
+                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
+                  
+                
+                  
+                    <li>Protección de una experiencia de portal con Auth0<a href="/settings/securing-portal-experience-auth0.html"></a></li>
+                  
+                
+                  
+                    <li>Asegurar una experiencia de portal con Okta<a href="/settings/securing-portal-experience-okta.html"></a></li>
+                  
+                
+                  
+                    <li>Proteger una experiencia de portal con SSL<a href="/settings/securing-portal-experience-ssl.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/develop/index.html">Desarrolladores <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/develop/page-experience-code-snippets.html">Fragmentos de código de experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="/develop/page-experiences-custom-css-reference.html">Referencia CSS personalizada de experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Incorporación de experiencias en página en un CMS</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/develop/overview-page-experience-api.html"> API de experiencia en página</a></li>
+                  
+                
+                  
+                    <li>Visión general:<a href="/develop/overview-page-experience-client-api.html"> API de cliente de experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="/develop/page-experience-api-error-reference.html">Referencia de error de API de experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="/develop/page-experience-client-api-sample.html">Ejemplo de API de cliente de experiencia en página</a></li>
+                  
+                
+                  
+                    <li>Inicio rápido:<a href="/develop/quick-start-page-experience-platform-rest-api.html"> API de plataforma de experiencia en página (REST)</a></li>
+                  
+                
+                  
+                    <li><a href="/develop/reference.html">Referencia de API de plataforma de experiencia en página</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">Referencia de API de cliente de experiencia en página</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/gallery-training-videos.html">Videos de formación en Galería</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-introduction-gallery.html"> Introducción a la Galería</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-building-portal-experiences-using-gallery.html"> Creación de experiencias de portal</a></li>
+                  
+                
+                  
+                    <li>Capacitación:<a href="/training/training-demand-building-page-experiences-using-gallery.html"> Creación de experiencias en página</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/gallery-release-notes.html">Notas de versión de Galería</a></li>
+                  
+                
+                  
+                    <li><a href="/release-notes/gallery-template-release-notes.html">Plantilla de galería Notas de</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Uso del control de acceso basado en roles</h1>
+<article class="bcls-article">
+  <summary>En este tema aprenderá cómo utilizar el control de acceso basado en roles para restringir los vídeos que aparecen en una experiencia basada en el rol del usuario.</summary>
+  <section class="bcls-section">
+    <p>Si se requiere que los usuarios inicien sesión en su Experiencia de evento virtual, se puede utilizar el control de acceso basado en roles para filtrar los vídeos que se muestran a los usuarios en función de su rol. El control de acceso basado en roles se basa en un atributo SAML especificado en el objeto de usuario devuelto por el sistema de administración de usuarios (es decir, sistema de registro, inicio de sesión único). Las reglas se definen en función de las funciones de usuario y las etiquetas de Video Cloud. Brightcove recomienda que todos los vídeos tengan una etiqueta para identificarlos para el evento, además de etiquetas adicionales para cualquier filtrado basado en roles que tenga que producirse.</p>
+    <p>Para configurar el control de acceso basado en roles, comience determinando cómo se restringirá el contenido y cree un archivo de configuración de acceso basado en roles adecuado. Algunas configuraciones de ejemplo se proporcionan en las siguientes secciones. A continuación, asocie el archivo de configuración basado en roles con la experiencia. Por último, etiquetar los vídeos apropiadamente.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Al crear colecciones de vídeos, las <strong>listas de reproducción</strong> no deben utilizarse para los criterios de recopilación, ya que las listas de reproducción no admiten el filtrado de control de acceso basado en roles. Utilice criterios <strong>personalizados</strong> en su lugar.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="creating">Creación de un archivo de configuración de acceso basado en roles</h2>
+    <p>El control de acceso basado en roles se configura mediante un archivo de configuración de acceso basado en roles independiente. El formato del archivo es el siguiente:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": ["premium"],
+     "roleAttribute": "role",
+     "valueDelimiter": ",",
+     "ignoreByRole": {},
+     "includeByRole": {},
+     "allowByRole": {}
+}   
+   </code></pre>
+    <p>Los valores de propiedad del archivo controlan cómo se aplica el acceso a la experiencia.</p>
+    <ul>
+      <li><strong>AdvancedRoleFilter</strong> - Cuando se establece en <strong>true</strong> , habilita el control de acceso basado en roles</li>
+      <li><strong>DefaultIncludeTags - Etiquetas</strong> que deben estar en todos los vídeos para que se muestren en la Experiencia de evento virtual. Esto le permite mostrar sólo un subconjunto de vídeos en la cuenta en la Experiencia de evento virtual.</li>
+      <li><strong>DefaultIgnoreTags</strong> - Los vídeos con estas etiquetas no se mostrarán a los usuarios que no formen parte de un rol</li>
+      <li><strong>roleAttribute - Atributo</strong> SAML en el registro de usuario que regresa del sistema de administración de usuarios. Se puede utilizar cualquier atributo SAML.</li>
+      <li><strong>ValueDelimiter</strong> - Delimitador utilizado para separar varios roles (si se pueden devolver varios roles)</li>
+      <li><strong>IgnoreByRole</strong> - Aumenta el <code translate="No">defaultIgnoreTags</code> ignorando adicionalmente más etiquetas basadas en el rol del usuario. Esto se utiliza para eliminar aún más vídeos que el usuario puede ver en función de su rol.</li>
+      <li><strong>IncludeMyRole</strong> - Los usuarios con rol asignado solo verán vídeos con la etiqueta especificada</li>
+      <li><strong>AllowByRole</strong> - Aumenta el <code translate="No">defaultIncludeTags</code> añadiendo adicionalmente más etiquetas basadas en el rol del usuario. Esto se utiliza para mostrar más vídeos a un usuario en función de su rol. Los usuarios con el rol especificado verán los vídeos etiquetados con, así <code translate="No">defaultIncludeTags</code> como las etiquetas listadas aquí.</li>
+    </ul>
+    En las secciones siguientes se proporcionan algunos archivos de configuración de ejemplo.</section>
+  <section class="bcls-section">
+    <h2 id="single-premium">Función de prima única</h2>
+    <p>En este escenario, los usuarios generales pueden ver la mayor parte del contenido, pero un subconjunto de contenido etiquetado con la etiqueta «premium» solo está disponible para los usuarios con el rol de «premium_user». Los usuarios Premium aún pueden ver todo el contenido que los usuarios generales pueden ver. El uso de una etiqueta «virtual_event» restringe el sitio para mostrar solo el contenido de la cuenta etiquetada específicamente para el evento:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": ["premium"],
+     "roleAttribute": "role",
+     "valueDelimiter": ",",
+     "ignoreByRole": {},
+     "includeByRole": {},
+     "allowByRole": {
+          "premium_user": ["premium"]
+     }
+}   
+   </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="tiered-content">Acceso al contenido en niveles</h2>
+    <p>Similar al primer escenario, pero con varios niveles donde cada nivel obtiene acceso a más contenido y aún puede ver todo el contenido de los niveles inferiores. Las funciones de usuario son «tier_1», «tier_2» y «tier_3», mientras que los usuarios que no tengan uno de estos roles no verán ningún contenido en niveles. Las etiquetas son «tier1», «tier2» y «tier3» respectivamente:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": ["tier1", "tier2", "tier3"],
+     "roleAttribute": "role",
+     "valueDelimiter": ",",
+     "ignoreByRole": {},
+     "includeByRole": {},
+     "allowByRole": {
+          "tier_1": ["tier1"],
+          "tier_2": ["tier1", "tier2"],
+          "tier_3": ["tier1", "tier2", "tier3"]
+     } 
+} 
+      </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="split-content">Dividir acceso al contenido</h2>
+    <p>En este ejemplo, los dos roles de usuario solo ven vídeos etiquetados específicamente para su rol. Un usuario sin un rol no verá el contenido de ninguna de las etiquetas:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": ["tag1", "tag2"],
+     "roleAttribute": "role",
+     "valueDelimiter": ",",
+     "ignoreByRole": {},
+     "includeByRole": {
+          "role1": ["tag1"],
+          "role2": ["tag2"]
+     },
+     "allowByRole": {}
+}    
+    </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="language">Segmentación por idioma</h2>
+    <p>Utilizando el enfoque basado en divisiones, el contenido se puede servir en función de un atributo SAML que contenga el idioma del usuario:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": [],
+     "roleAttribute": "language",
+     "valueDelimiter": ",",
+     "ignoreByRole": {},
+     "includeByRole": {
+          "en": ["english"],
+          "es": ["spanish"],
+          "jp": ["japanese"]
+     },
+     "allowByRole": {}
+}     
+      </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="merged-rules">Ejemplo de reglas combinadas</h2>
+    <p>Este ejemplo artificioso ilustra cómo se pueden combinar las diferentes opciones. Un usuario general verá todo el contenido etiquetado «virtual_event» que no esté etiquetado como «premium». Un usuario con la función «premium_user» verá todo el contenido general más el contenido premium, pero no verá el contenido etiquetado con «promocional». Un usuario con un rol «trial_user» verá contenido general y contenido premium, pero también verá el contenido etiquetado con «promocional». Un usuario con el rol «expired_user» sólo verá vídeos etiquetados como promocionales:</p>
+    <pre><code translate="No">
+{
+     "advancedRoleFilter": "true",
+     "defaultIncludeTags": ["virtual_event"],
+     "defaultIgnoreTags": ["premium"],
+     "roleAttribute": "role",
+     "valueDelimiter": ",",
+     "ignoreByRole": {
+          "premium_user": ["promotional"]
+     },
+     "includeByRole": { "expired_user": ["promotional"]
+     },
+     "allowByRole": {
+          "trial_user": ["promotional"],
+          "premium_user": ["premium"]
+     }
+}
+      </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign">Asignación de un perfil de acceso basado en roles</h2>
+    <p>Una vez que haya creado un perfil de acceso basado en roles para controlar el acceso al contenido, asócielo a la experiencia.</p>
+    <ol class="bcls-tasklist">
+      <li>Copie el perfil de control de acceso en el portapapeles.</li>
+      <li>Abra el módulo de Gallery.</li>
+      <li>Edite la experiencia.</li>
+      <li>Haga clic en <strong>APARIENCIA Y COMPORTAMIENTO &gt; Personalizado</strong> en la navegación izquierda.</li>
+      <li>Pegue la configuración del perfil de acceso en el campo <strong>JSON de plantilla personalizada</strong> .
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/rbac-json.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information">Nota: Si no se muestra este campo, la cuenta no se ha habilitado para el control de acceso basado en roles.</aside>
+      </li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+    </ol>
+    <p>Asegúrese de que vuelve a publicar la experiencaso de que aparezcan los cambios.&nbsp;<a href="/portal/previewing-and-publishing-portal-experience.html"></a>&nbsp;</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="attributes">Exposición de atributos SAML</h2>
+    <p>Para que la experiencia pueda acceder al atributo de rol desde el proveedor de sistema de registro o SSO/registro, asegúrese de que la configuración de SSO esté configurada correctamente.</p>
+    <ol class="bcls-tasklist">
+      <li>Abra el módulo de Gallery.</li>
+      <li>Haga clic en el&nbsp;<strong>Configuraciones</strong>&nbsp;enlace en la página de inicio de la Galería.</li>
+      <li>En el panel de navegación de la izquierda, haga clic en&nbsp;<strong>Perfiles de control de acceso</strong>. Se mostrará una lista de perfiles de control de acceso creados.</li>
+      <li>Haga clic en el icono de edición del perfil que está utilizando Experiencia de evento virtual.</li>
+      <li>Confirme que la opción <strong>Exponer todos los atributos</strong> de la parte inferior de la página está marcada.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/rbac-expose-attributes.png"/></figure>
+      </li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
