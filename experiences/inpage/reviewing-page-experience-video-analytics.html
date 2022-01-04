@@ -1,801 +1,97 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Revisión de análisis de vídeo de experiencia en página</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">GALERÍA BRIGHTCOVE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/experiences/inpage/">En la página</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Revisión de análisis de vídeo de experiencia en página</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Creación de una experiencia de portal</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Creación de una experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Creación y gestión de experiencias</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Videos de formación en Galería</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Introducción a Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li>Descripción general de las experiencias de la galería<a href="/get-started/overview-gallery-experiences.html"></a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-introduction-gallery.html"> Introducción a la Galería</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-building-portal-experiences-using-gallery.html"> Creación de experiencias de portal</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-building-page-experiences-using-gallery.html"> Creación de experiencias en página</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Experiencias +<a href="/experiences/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      Portal +<a href="/experiences/portal/index.html"><strong></strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Adición de vídeos de Video Cloud</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html">Adición de vídeos</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">Añadir vídeos de YouTube</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Cambio del diseño del reproductor</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Configuración de llamadas a la acción</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Configuración de los ajustes de SEO</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">Configuración de los detalles de una experiencia</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Configuración de seguimiento de terceros</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Control del acceso</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Creación, edición y publicación de experiencias de portal</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Personalización del aspecto y el comportamiento</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Personalización de la configuración de la plantilla de catálogo</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Personalización de la configuración de la plantilla de Crónica</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Personalización del contenido de las páginas del portal</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Personalización de la configuración de la plantilla de marquesina</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Personalización de la configuración del reproductor y del formulario de prospecto</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Personalización de la configuración del sitio</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Personalización de las características del sitio</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Personalización de la configuración social</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">Personalización del estilo</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Personalización de los ajustes de vídeo y reproducción</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Personalización de la configuración de vídeo</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Descarga de Vídeos</a></li>
-                        
-                        <li>Exportación de datos de prospecto<a href="/experiences/portal/exporting-gallery-lead-data.html"></a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indexación de una experiencia de portal</a></li>
-                        
-                        <li>Introducción a las plantillas de Gallery Portal<a href="/experiences/portal/overview-gallery-portal-templates.html"></a></li>
-                        
-                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
-                        
-                        <li>Actualización de plantillas de galería<a href="/experiences/portal/updating-gallery-templates.html"></a></li>
-                        
-                        <li>Uso de un formulario de prospecto<a href="/experiences/portal/using-lead-form-portal-experience.html"></a></li>
-                        
-                        <li>Uso de fuentes personalizadas<a href="/experiences/portal/using-custom-fonts-portal-experience.html"></a></li>
-                        
-                        <li>Uso del Editor de sitios para personalizar una experiencia<a href="/experiences/portal/using-site-editor-customize-portal-experience.html"></a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">En la página <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">Adición de componentes</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Adición de interacciones</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html">Adición de vídeos</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Configuración de componentes complementarios</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">Configuración de los detalles de una experiencia</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Configuración de la configuración de una experiencia</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Configuración de descargas de vídeo</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Creación de temas personalizados</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">Personalización de una experiencia en página</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">Personalización del estilo</a></li>
-                        
-                        <li>Descripción general de las plantillas de experiencia en página<a href="/experiences/inpage/overview-gallery-page-experience-templates.html"></a></li>
-                        
-                        <li>Visión general:<a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html"> Creación y publicación de experiencias en página</a></li>
-                        
-                        <li>Vista previa y publicación<a href="/experiences/inpage/previewing-and-publishing-page-experience.html"></a></li>
-                        
-                        <li>Revisión de análisis<a href="/experiences/inpage/reviewing-page-experience-analytics.html"></a></li>
-                        
-                        <li>Revisión de análisis de llamadas a la acción<a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html"></a></li>
-                        
-                        <li>Revisión del panel de Analytics<a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html"></a></li>
-                        
-                        <li>Revisión de análisis de vídeo<a href="/experiences/inpage/reviewing-page-experience-video-analytics.html"></a></li>
-                        
-                        <li>Actualización de plantillas de galería<a href="/experiences/portal/updating-gallery-templates.html"></a></li>
-                        
-                        <li>Uso de modificaciones dinámicas de vídeo<a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html"></a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      Evento en Vivo +<a href="/experiences/live/index.html"><strong></strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Adición de Pigeonhole a una página activa</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Adición de Pigeonhole a un portal en vivo</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Control del acceso</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">Creación de una experiencia en la página de eventos en vivo</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">Creación de una experiencia de portal de eventos en vivo</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Creación del estado del evento en vivo</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Creación del estado posterior al evento</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Creación del estado previo al evento</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Personalización de la configuración del portal de eventos en vivo</a></li>
-                        
-                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      Página de aterrizaje +<a href="/experiences/landing/index.html"><strong></strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Asignación de un dominio personalizado</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">Creación de una experiencia de página de destino</a></li>
-                        
-                        <li>Exportación de datos de prospecto<a href="/experiences/portal/exporting-gallery-lead-data.html"></a></li>
-                        
-                        <li>Vista previa y publicación<a href="/experiences/portal/previewing-and-publishing-portal-experience.html"></a></li>
-                        
-                        <li>Uso de un formulario de prospecto<a href="/experiences/portal/using-lead-form-portal-experience.html"></a></li>
-                        
-                        <li>Uso del Editor de sitios para personalizar una experiencia<a href="/experiences/portal/using-site-editor-customize-portal-experience.html"></a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">General <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">Requisitos del sistema de Galería</a></li>
-                  
-                
-                  
-                    <li>Solución de problemas de la Galería de Brightcove<a href="/general/troubleshooting-brightcove-gallery-issues.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Galletas de Brightcove Gallery</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">Configuración de la galería <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">Configuración de la Galería</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">Configuración de los ajustes de YouTube</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">Configuración de perfiles de control de acceso</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
-                  
-                
-                  
-                    <li>Protección de una experiencia de portal con Auth0<a href="/settings/securing-portal-experience-auth0.html"></a></li>
-                  
-                
-                  
-                    <li>Asegurar una experiencia de portal con Okta<a href="/settings/securing-portal-experience-okta.html"></a></li>
-                  
-                
-                  
-                    <li>Proteger una experiencia de portal con SSL<a href="/settings/securing-portal-experience-ssl.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">Desarrolladores <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">Fragmentos de código de experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">Referencia CSS personalizada de experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Incorporación de experiencias en página en un CMS</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/develop/overview-page-experience-api.html"> API de experiencia en página</a></li>
-                  
-                
-                  
-                    <li>Visión general:<a href="/develop/overview-page-experience-client-api.html"> API de cliente de experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">Referencia de error de API de experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">Ejemplo de API de cliente de experiencia en página</a></li>
-                  
-                
-                  
-                    <li>Inicio rápido:<a href="/develop/quick-start-page-experience-platform-rest-api.html"> API de plataforma de experiencia en página (REST)</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">Referencia de API de plataforma de experiencia en página</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">Referencia de API de cliente de experiencia en página</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Entrenamiento +<a href="/training/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Videos de formación en Galería</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-introduction-gallery.html"> Introducción a la Galería</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-building-portal-experiences-using-gallery.html"> Creación de experiencias de portal</a></li>
-                  
-                
-                  
-                    <li>Capacitación:<a href="/training/training-demand-building-page-experiences-using-gallery.html"> Creación de experiencias en página</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Cursos de formación de la Universidad de Brightcove</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">Notas de versión de Galería</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">Plantilla de galería Notas de</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Revisión de análisis de video de experiencia en la página
+parent: In-Page 
+grandparent: Experiences
+description: In this topic you will learn about the In-Page Experience video analytics that are available.
+---
 
 <article class="bcls-article">
-  <h1>Revisión de análisis de vídeo de experiencia en página</h1>
-  <summary>En este tema aprenderá acerca de los análisis de vídeo de Experiencia en página que están disponibles.</summary>
+  <h1>Revisión de análisis de video de experiencia en la página</h1>
+  <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <p>El análisis de vídeo de Experiencia en página proporciona análisis sobre el rendimiento y la interacción del vídeo. Para revisar el análisis de vídeo, edite la experiencia y haga clic en <strong>Experience Analytics &gt; Vídeos</strong> en la navegación izquierda.</p>
-    <p>Este artículo consta de los siguientes apartados:</p>
+    <p>El análisis de video de la experiencia en la página proporciona análisis sobre el rendimiento y la participación del video. Para revisar las analíticas de video, edite la experiencia y haga clic en <strong>ANÁLISIS DE EXPERIENCIAS&gt; Vídeos</strong> en la navegación de la izquierda.</p>
+    <p>Este tema incluye las siguientes secciones:</p>
     <ul>
-      <li>Selección de un intervalo de tiempo<a href="#timespan"></a></li>
+      <li><a href="#timespan">Seleccionar un lapso de tiempo</a></li>
       <li><a href="#performance">Revisión de análisis de rendimiento</a></li>
-      <li><a href="#engagement">Revisión de análisis de interacción</a></li>
+      <li><a href="#engagement">Revisión de análisis de participación</a></li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Nota: El análisis de vídeo de Experiencia en página se realiza un seguimiento mediante una combinación de ID de reproductor e ID de experiencia. Si cambia el reproductor por una experiencia, el análisis se restablecerá para esa experiencia. Si vuelve a cambiar el reproductor, volverán los análisis de la experiencia.</aside>
+    <aside class="bcls-aside bcls-aside--information">Nota: Los análisis de video de la experiencia en la página se controlan mediante una combinación de ID de jugador e ID de experiencia. Si cambia el jugador para una experiencia, los análisis se restablecerán para esa experiencia. Si cambias de nuevo el reproductor, volverán los análisis de la experiencia.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="timespan">Selección de un intervalo de tiempo</h2>
-    <p>Para especificar el período de tiempo para el informe, puede hacer clic en una fecha rápida o utilizar el control de calendario.</p>
+    <h2 id="timespan">Seleccionar un lapso de tiempo</h2>
+    <p>Para especificar el período de tiempo para el informe, puede hacer clic en una fecha rápida o usar el control de calendario.</p>
     <div class="BCL-subsection">
-      <h3>Usar una fecha rápida</h3>
-      <p>Una serie de fechas rápidas se encuentran en la parte superior de la página. Las siguientes fechas rápidas están disponibles:</p>
+      <h3>Usando una cita rápida</h3>
+      <p>En la parte superior de la página hay una serie de citas rápidas. Están disponibles las siguientes fechas rápidas:</p>
       <ul>
-        <li>Hoy<strong></strong></li>
-        <li>Ayer<strong></strong></li>
-        <li>Últimos 7 días<strong></strong></li>
-        <li>Últimos 30 días<strong></strong></li>
-        <li>Este mes - El mes calendario hasta la fecha - por ejemplo, si hoy es el 17 de marzo, este informe mostrará del 1 de marzo al 17 de marzo<strong></strong></li>
-        <li>El mes pasado - El mes calendario anterior - por ejemplo, si hoy es 14 de febrero, este informe mostrará del 1 de enero al 31 de enero.<strong></strong></li>
+        <li><strong>Hoy</strong></li>
+        <li><strong>Ayer</strong></li>
+        <li><strong>Los últimos 7 días</strong></li>
+        <li><strong>Últimos 30 días</strong></li>
+        <li><strong>Este mes</strong> - El mes calendario hasta la fecha: por ejemplo, si hoy es 17 de marzo, este informe mostrará del 1 al 17 de marzo.</li>
+        <li><strong>El mes pasado</strong> - El mes calendario anterior: por ejemplo, si hoy es 14 de febrero, este informe mostrará del 1 al 31 de enero.</li>
       </ul>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="fechas rápidas" src="/assets/images/experiences/inpage/node16846-quick-dates.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="quick dates" src="/assets/images/experiences/inpage/node16846-quick-dates.png" /></figure>
       <p>Haga clic en una fecha rápida para actualizar el informe.</p>
     </div>
     <div class="BCL-subsection">
-      <h3>Uso del control de calendario</h3>
-      <p>También puede seleccionar una fecha de inicio y finalización haciendo clic en el control del calendario.</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="selector de fechas" src="/assets/images/experiences/inpage/node16846-date-picker.png"/></figure>
-      <p>Haga clic en <strong>Aplicar</strong> para actualizar el informe.</p>
+      <h3>Usando el control de calendario</h3>
+      <p>También puede seleccionar una fecha de inicio y finalización haciendo clic en el control de calendario.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="date selector" src="/assets/images/experiences/inpage/node16846-date-picker.png" /></figure>
+      <p>Hacer clic <strong>Solicitar</strong> para actualizar el informe.</p>
     </div>
     <div class="BCL-subsection">
-      <h3>Zona horaria de los informes</h3>
-      <p>Los datos se basan en la zona horaria de notificación de la cuenta. La zona horaria de generación de informes se utiliza para calcular los comienzos de los días reflejados en los informes. La modificación del ajuste de zona horaria para informes solo afecta a los datos desde el momento de efectuarse ese cambio, es decir, que no se aplica con carácter retroactivo. Si cambia la configuración de la zona horaria, es posible que vea una mancha plana o un pico en los datos al observar los límites de día en los que se aplicó el cambio. Es posible que las actualizaciones de la configuración de la zona horaria no surtan efecto inmediatamente, y los datos de análisis pueden continuar haciendo referencia a la configuración anterior hasta que el sistema procese los cambios.</p>
-      <p>La zona horaria de informes se puede configurar como parte de la configuración de la cuenta. Para obtener información sobre cómo cambiar la zona horaria de los informes, consulte <a href="https://studio.support.brightcove.com/admin/managing-account-settings.html#account_settings">Administrar la configuración de la cuenta</a>.</p>
+      <h3>Zona horaria de informes</h3>
+      <p>Los datos se basan en la zona horaria de informes de la cuenta. La zona horaria de informes se utiliza para calcular los límites de los días para los datos de informes. Cambiar la configuración de la zona horaria de los informes solo afecta a los datos en el futuro y los cambios no se aplican retroactivamente. Si cambia la configuración de la zona horaria, es posible que vea un punto plano o un pico en sus datos al mirar los límites del día donde se aplicó el cambio. Es posible que las actualizaciones de la configuración de la zona horaria no surtan efecto de inmediato y que los datos analíticos continúen haciendo referencia a la configuración anterior hasta que el sistema procese los cambios.</p>
+      <p>La zona horaria de los informes se puede configurar como parte de la configuración de la cuenta. Para obtener información sobre cómo cambiar la zona horaria de los informes, consulte <a href="https://studio.support.brightcove.com/admin/managing-account-settings.html#account_settings">Administrar la configuración de la cuenta</a>.</p>
     </div>
   </section>
   <section class="bcls-section">
     <h2 id="performance">Revisión de análisis de rendimiento</h2>
-    <p>Para revisar los análisis de rendimiento, haga clic en <strong>Experience Analytics &gt; Vídeos</strong> en la navegación izquierda y, a continuación, haga clic en <strong>Rendimiento</strong> en el encabezado de página. De forma predeterminada, los datos de rendimiento se muestran mediante <strong>Video</strong>. Se mostrarán los siguientes datos de los vídeos de la experiencia:</p>
+    <p>Para revisar las analíticas de rendimiento, haga clic en <strong>ANÁLISIS DE EXPERIENCIAS&gt; Vídeos</strong> en el panel de navegación de la izquierda y luego haga clic en <strong>Actuación</strong> en el encabezado de la página. De forma predeterminada, los datos de rendimiento se muestran por <strong>Video</strong>. Se mostrarán los siguientes datos para los videos en la experiencia:</p>
     <ul>
-      <li>Nombre e ID de vídeo<strong></strong></li>
-      <li><strong>Visionados del vídeo</strong>: número de veces que se ha comenzado a reproducir un vídeo. Este contador se incrementa cada vez que se comienza a retransmitir la secuencia (las operaciones de rebobinado y de repetición no cuentan). No mide el número de espectadores individuales.</li>
-      <li><strong>Número de impresiones del vídeo</strong>: número de veces que un vídeo fue cargado en un reproductor y quedó listo para la interacción con el usuario.</li>
-      <li>Velocidad de reproducción (%) - El porcentaje de usuarios que reprodujeron el vídeo después de cargarlo (Vistas de vídeo divididas por impresiones de vídeo)<strong></strong></li>
-      <li><strong>Tiempo medio de visualización</strong> : el tiempo medio que los espectadores pasaron viendo el vídeo</li>
-      <li><strong>Porcentaje medio de visualización</strong> : el porcentaje medio del vídeo visualizado (tiempo medio de visualización dividido por la duración del vídeo)</li>
+      <li><strong>Nombre e ID del video</strong></li>
+      <li><strong>Reproducciones de video</strong> - La cantidad de veces que un video comenzó a reproducirse, grabado cuando se inicia la transmisión (no incluye rebobinado ni reproducción); no es una medida de espectadores individuales</li>
+      <li><strong>Impresiones de video</strong> - La cantidad de veces que el video se cargó en un reproductor y estuvo listo para la interacción.</li>
+      <li><strong>Tasa de reproducción (%)</strong> - El porcentaje de usuarios que reprodujeron el video después de que se cargó (Vistas de video divididas por Impresiones de video)</li>
+      <li><strong>Tiempo medio visto</strong> - El tiempo promedio que los espectadores dedicaron a ver el video.</li>
+      <li><strong>Porcentaje medio visto</strong> - El porcentaje promedio del video que se vio (tiempo promedio visto dividido por la duración del video)</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="análisis de rendimiento de vídeo" src="/assets/images/experiences/inpage/node16846-performance.png"/></figure>
-    <p>Seleccione <strong>Dispositivo</strong> para ver el rendimiento por dispositivo. Los tipos de dispositivos posibles son:</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video performance analytics" src="/assets/images/experiences/inpage/node16846-performance.png" /></figure>
+    <p>Seleccione <strong>Dispositivo</strong> para ver el rendimiento por dispositivo. Los posibles tipos de dispositivos son:</p>
     <ul>
-      <li><strong>Escritorio</strong>: ordenadores de sobremesa y portátiles</li>
-      <li><strong>Tableta</strong>: tabletas iPad, Android, etc.</li>
-      <li><strong>Móviles</strong>: teléfonos móviles</li>
-      <li><strong>Televisión conectada/Consola de videojuegos/Dispositivo acompañante</strong>: televisores inteligentes, descodificadores y consolas de videojuegos</li>
-      <li><strong>Otros</strong>: para elementos no asignables a ninguna de las opciones anteriores</li>
+      <li><strong>Escritorio</strong> - Incluye computadoras de escritorio y portátiles</li>
+      <li><strong>Tableta</strong> - Incluye iPads, tabletas Android, etc.</li>
+      <li><strong>Móvil</strong> - Teléfonos móviles</li>
+      <li><strong>TV / consola de juegos / dispositivo complementario conectado</strong> - Incluye Smart TV, decodificadores y consolas de juegos.</li>
+      <li><strong>Otro</strong> - Para agentes de usuario que no están asignados a ninguno de los anteriores</li>
     </ul>
-    <p>El rendimiento también se puede ver por <strong>país</strong> y <strong>día</strong>.</p>
-    <p>Se mostrarán los siguientes datos de los vídeos de la experiencia:</p>
+    <p>El rendimiento también puede ser visto por <strong>País</strong> y <strong>Día</strong>.</p>
+    <p>Se mostrarán los siguientes datos para los videos en la experiencia:</p>
     <ul>
       <li><strong>Tipo de dispositivo</strong></li>
-      <li><strong>Visionados del vídeo</strong>: número de veces que se ha comenzado a reproducir un vídeo. Este contador se incrementa cada vez que se comienza a retransmitir la secuencia (las operaciones de rebobinado y de repetición no cuentan). No mide el número de espectadores individuales.</li>
-      <li><strong>Número de impresiones del vídeo</strong>: número de veces que un vídeo fue cargado en un reproductor y quedó listo para la interacción con el usuario.</li>
-      <li>Velocidad de reproducción (%) - El porcentaje de usuarios que reprodujeron el vídeo después de cargarlo (Vistas de vídeo divididas por impresiones de vídeo)<strong></strong></li>
-      <li><strong>Tiempo medio de visualización</strong> : el tiempo medio que los espectadores pasaron viendo el vídeo</li>
+      <li><strong>Reproducciones de video</strong> - La cantidad de veces que un video comenzó a reproducirse, grabado cuando se inicia la transmisión (no incluye rebobinado ni reproducción); no es una medida de espectadores individuales</li>
+      <li><strong>Impresiones de video</strong> - La cantidad de veces que el video se cargó en un reproductor y estuvo listo para la interacción.</li>
+      <li><strong>Tasa de reproducción (%)</strong> - El porcentaje de usuarios que reprodujeron el video después de que se cargó (Vistas de video divididas por Impresiones de video)</li>
+      <li><strong>Tiempo medio visto</strong> - El tiempo promedio que los espectadores dedicaron a ver el video.</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="análisis de rendimiento de dispositivos" src="/assets/images/experiences/inpage/node16846-performance-device.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="device performance analytics" src="/assets/images/experiences/inpage/node16846-performance-device.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="engagement">Revisión de análisis de interacción</h2>
-    <p>Para revisar los análisis de rendimiento, haga clic en <strong>Experience Analytics &gt; Vídeos</strong> en la navegación izquierda y, a continuación, haga clic en <strong>Participación</strong> en el encabezado de página.&nbsp;De forma predeterminada, los datos de interacción se muestran en <strong>Vídeo</strong> , pero también se pueden mostrar por <strong>día</strong>.</p>
-    <p>El análisis de interacción mostrará los siguientes datos para los vídeos de la experiencia:</p>
+    <h2 id="engagement">Revisión de análisis de participación</h2>
+    <p>Para revisar las analíticas de rendimiento, haga clic en <strong>ANÁLISIS DE EXPERIENCIAS&gt; Vídeos</strong> en el panel de navegación de la izquierda y luego haga clic en <strong>Compromiso</strong> en el encabezado de la página.&nbsp;De forma predeterminada, los datos de participación se muestran por <strong>Video</strong> pero también puede ser mostrado por <strong>Día</strong>.</p>
+    <p>El análisis de participación mostrará los siguientes datos para los videos en la experiencia:</p>
     <ul>
-      <li>Nombre e ID de vídeo<strong></strong></li>
-      <li><strong>Puntuación de interacción</strong> : porcentaje medio visto por vista de vídeo (calculado agregando todo el porcentaje visto dividido por el número de vistas de vídeo). Para obtener más información sobre cómo se calcula esto, consulte <a href="https://studio.support.brightcove.com/analytics/calculating-video-engagement-score.html">Cálculo de la puntuación de interacción de vídeo</a></li>
-      <li><strong>Vistas al 1%</strong> - Cuántas vistas se grabaron en el punto 1% del video</li>
-      <li><strong>Visualizaciones al 25%</strong> - Cuántas vistas se grabaron en el 25% del punto del video</li>
-      <li><strong>Vistas al 50%</strong> - Cuántas vistas se grabaron en el punto 50% del vídeo</li>
-      <li><strong>Vistas al 75%</strong> - Cuántas vistas se grabaron en el 75% del punto del video</li>
-      <li><strong>Vistas al 100%</strong> - Cuántas vistas se grabaron en el punto 100% del vídeo</li>
-      <li><strong>Social Shares</strong> - Cuántas veces se compartió el vídeo en una cuenta de redes sociales</li>
+      <li><strong>Nombre e ID del video</strong></li>
+      <li><strong>Puntuación de compromiso</strong> - El porcentaje promedio visto por vista de video (calculado sumando todo el porcentaje visto dividido por la cantidad de vistas de video). Para obtener más información sobre cómo se calcula, consulte <a href="https://studio.support.brightcove.com/analytics/calculating-video-engagement-score.html">Cálculo de la puntuación de interacción con el vídeo</a></li>
+      <li><strong>Vistas al 1%</strong> - Cuántas vistas se registraron en el punto del 1% del video</li>
+      <li><strong>Vistas al 25%</strong> - Cuántas vistas se registraron en el punto del 25% del video</li>
+      <li><strong>Vistas al 50%</strong> - Cuántas vistas se registraron en el punto del 50% del video</li>
+      <li><strong>Vistas al 75%</strong> - Cuántas vistas se registraron en el punto del 75% del video</li>
+      <li><strong>Vistas al 100%</strong> - Cuántas vistas se registraron en el punto 100% del video</li>
+      <li><strong>Acciones sociales</strong> - Cuántas veces se compartió el video en una cuenta de redes sociales</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="análisis de interacción" src="/assets/images/experiences/inpage/node16846-engagement.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="engagement analytics" src="/assets/images/experiences/inpage/node16846-engagement.png" /></figure>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

@@ -1,0 +1,35 @@
+---
+title: Creación de un archivo de altavoces de eventos
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to create an event speakers file that can be uploaded to initially populate speaker information for a Virtual Event Experience.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Creación de un archivo de altavoces de eventos</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Es posible que haya creado una lista de oradores del evento en una herramienta de terceros, por ejemplo, Microsoft Excel o Google Sheets. El módulo Agenda permite cargar un archivo.csv de oradores de eventos. Una vez que se carga el archivo de los oradores, la información de los oradores se puede editar utilizando el módulo Agenda.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Aquí se puede descargar un archivo de plantilla de altavoces de ejemplo.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="naming">Requisitos de nomenclatura de columnas</h2>
+    <p>Al crear el archivo de oradores, puede descargar una plantilla de oradores de muestra y editarla o usar un archivo de oradores existente que haya creado. El módulo Agenda busca la existencia de nombres de columna específicos. Estas columnas se asignarán a los campos de altavoz apropiados. Otras columnas que puedan estar en su archivo de altavoz se ignorarán durante la importación. Para cargar un archivo de orador, se requieren las siguientes columnas:</p>
+    <ul>
+      <li><code translate="No">first_name</code>- Nombre del orador</li>
+      <li><code translate="No">last_name</code>- Apellido del orador</li>
+    </ul>
+    <p>Las siguientes columnas son opcionales, pero si existen en su archivo de oradores, también se importarán:</p>
+    <ul>
+      <li><code translate="No">id</code>- No puede ser definido por el usuario. Esta es la ID que se completaría si el usuario exportara una lista de oradores como CSV. Se utiliza para actualizar las entradas existentes en la base de datos.</li>
+      <li><code translate="No">email</code>- Dirección de correo electrónico del orador</li>
+      <li><code translate="No">title</code>- Título del orador</li>
+      <li><code translate="No">company</code>- Empresa de altavoces</li>
+      <li><code translate="No">bio</code>- Biografía del orador</li>
+      <li><code translate="No">image</code>- Imagen del orador</li>
+    </ul>
+    <p>Cuando esté listo para importar sus altavoces al módulo Agenda, expórtelo como un archivo.csv. <strong>El módulo Agenda solo puede importar un archivo.csv.</strong> </p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Para obtener información sobre cómo cargar su archivo de agenda en el módulo Agenda, consulte <a href="managing-agenda-virtual-event-experience.html">Carga y personalización de la agenda del evento</a>.</aside>
+  </section>
+</article>

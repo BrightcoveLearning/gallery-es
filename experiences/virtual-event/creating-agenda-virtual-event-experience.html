@@ -1,0 +1,49 @@
+---
+title: Creación de un archivo de agenda de eventos
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to create an event agenda file that can be uploaded to initially populate an online agenda for a Virtual Event Experience.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Creación de un archivo de agenda de eventos</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Normalmente, la agenda del evento se crea inicialmente en una herramienta de terceros, por ejemplo, Microsoft Excel o Google Sheets. El módulo Agenda requiere que se cargue un archivo de agenda .csv externo para crear inicialmente la agenda del evento. Una vez que se carga el archivo de la agenda, se puede editar utilizando el módulo Agenda.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Aquí se puede descargar un archivo de plantilla de agenda de ejemplo.</aside> <aside class="bcls-aside bcls-aside--information">Nota: No hay forma de crear una agenda en el módulo Agenda. Debe cargar un archivo.csv para rellenar inicialmente la agenda del evento.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="naming">Requisitos de nomenclatura de columnas</h2>
+    <p>Al crear el archivo de agenda inicial, puede descargar una plantilla de agenda de muestra y editarla o utilizar un archivo de agenda existente que haya creado. El módulo Agenda busca la existencia de nombres de columna específicos. Estas columnas se asignarán a los campos correspondientes en el módulo de la agenda. El módulo Agenda ignorará otras columnas que puedan estar en su archivo de agenda. Para cargar un archivo de agenda, se requieren las siguientes columnas:</p>
+    <ul>
+      <li><code translate="No">name</code>- Nombre de la sesión</li>
+      <li><code translate="No">start_date</code>- Fecha de inicio de la sesión (formato DD / MM / AAAA)</li>
+      <li><code translate="No">start_time</code>- Hora de inicio de la sesión</li>
+      <li><code translate="No">timezone</code>- Zona horaria para start_time (utilizando el ID de zona del <a href="https://nodatime.org/TimeZones">Zonas horarias de la IANA</a>)</li>
+      <li><code translate="No">duration</code>- Duración de la sesión en minutos</li>
+      <li><code translate="No">track</code>- Valor que identifica la pista (es decir, técnico, ventas, marketing); un nombre de pista de <strong>TODOS</strong> indica que la sesión abarca todas las pistas (es decir, almuerzo, descansos)</li>
+    </ul>
+    <p>Las siguientes columnas son opcionales, pero si existen en su archivo de agenda, también se importarán al módulo de agenda:</p>
+    <ul>
+      <li><code translate="No">description</code>- Descripción de la sesión</li>
+      <li><code translate="No">speaker1_first</code>- Nombre del orador</li>
+      <li><code translate="No">speaker1_last</code>- Apellido del orador</li>
+      <li><code translate="No">speaker1_email</code>- Dirección de correo electrónico del orador (utilizada para identificar de forma única a un orador)</li>
+      <li><code translate="No">speaker2_first</code>- Nombre del orador 2</li>
+      <li><code translate="No">speaker2_last</code>- Apellido del orador 2</li>
+      <li><code translate="No">speaker2_email</code>- Dirección de correo electrónico del orador 2 (utilizada para identificar de forma única a un orador)</li>
+      <li><code translate="No">speaker3_first</code>- Nombre del orador 3</li>
+      <li><code translate="No">speaker3_last</code>- Apellido del orador 3</li>
+      <li><code translate="No">speaker3_email</code>- Dirección de correo electrónico del orador 3 (utilizada para identificar de forma única a un orador)</li>
+      <li><code translate="No">session_type</code>- Tipo de sesión (sesión, discurso de apertura, reunión, otro)</li>
+      <li><code translate="No">video _id</code>- Identificación de video (para sesiones, conferencias magistrales y otros tipos de sesiones)</li>
+      <li><code translate="No">url</code>- URL de la reunión (para tipos de sesiones de reunión)</li>
+      <li><code translate="No">related _label</code>- Etiqueta para el enlace relacionado que aparecerá en el módulo Agenda</li>
+      <li><code translate="No">related_link</code>- Enlace URL a un folleto de sesión, diapositivas, etc.</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Nota: La carga de la agenda admite hasta tres oradores, se pueden agregar oradores adicionales a una sesión utilizando el módulo Agenda.</aside>
+    <p>Cuando esté listo para importar su agenda al módulo Agenda, expórtala como un archivo.csv. <strong>El módulo Agenda solo puede importar un archivo.csv.</strong> Para obtener información sobre cómo cargar su archivo de agenda en el módulo Agenda, consulte <a href="managing-agenda-virtual-event-experience.html">Carga y personalización de la agenda del evento</a>.</p>
+    <p>&nbsp;</p>
+  </section>
+</article>
