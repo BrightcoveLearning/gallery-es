@@ -11,7 +11,7 @@ description: In this topic you will learn how to customize the settings for an I
   <section class="bcls-section">
     <p>La configuración controla varios aspectos de una experiencia en la página. Están disponibles las siguientes configuraciones:</p>
     <ul>
-      <li><a href="#playersettings">Jugador</a></li>
+      <li><a href="#playersettings">reproductor</a></li>
       <li><a href="#videosettings">Video</a></li>
       <li><a href="#social">Social</a></li>
       <li><a href="#seo">SEO</a></li>
@@ -22,22 +22,22 @@ description: In this topic you will learn how to customize the settings for an I
   </section>
   <section class="bcls-section">
     <h2 id="playersettings">Configurar los ajustes del reproductor</h2>
-    <p>La configuración del jugador controla el jugador que se usa y el comportamiento del jugador para la experiencia. Para configurar los ajustes del reproductor, edite la experiencia y luego haga clic en <strong>AJUSTES&gt; Jugador</strong> en la navegación de la izquierda.</p>
+    <p>La configuración del reproductor controla el reproductor que se usa y el comportamiento del reproductor para la experiencia. Para configurar los ajustes del reproductor, edite la experiencia y luego haga clic en <strong>AJUSTES&gt; reproductor</strong> en la navegación de la izquierda.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/inpage/node16793-player-settings.png" /></figure>
     <div class="BCL-subsection">
-      <h3>Seleccionar un jugador</h3>
-      <p>Para seleccionar un reproductor para usar en la experiencia en la página, seleccione un reproductor de la <strong>Jugadores disponibles</strong> la lista desplegable. La lista mostrará todos los reproductores en su cuenta de Video Cloud.</p>
-      <p>Después de seleccionar un jugador, la vista previa del reproductor mostrará una vista previa del jugador seleccionado.</p>
-      <aside class="bcls-aside bcls-aside--information">Nota: Cuando se usa una experiencia en la página, el estilo del reproductor solo se refleja mientras se reproduce un video. El estilo del jugador no se verá en los estados ANTES DE JUGAR o AFTER PLAY.</aside>
+      <h3>Seleccionar un reproductor</h3>
+      <p>Para seleccionar un reproductor para usar en la experiencia en la página, seleccione un reproductor de la <strong>reproductores disponibles</strong> la lista desplegable. La lista mostrará todos los reproductores en su cuenta de Video Cloud.</p>
+      <p>Después de seleccionar un reproductor, la vista previa del reproductor mostrará una vista previa del reproductor seleccionado.</p>
+      <aside class="bcls-aside bcls-aside--information">Nota: Cuando se usa una experiencia en la página, el estilo del reproductor solo se refleja mientras se reproduce un video. El estilo del reproductor no se verá en los estados ANTES DE JUGAR o AFTER PLAY.</aside>
     </div>
     <div class="BCL-subsection">
-      <h3>Establecer el comportamiento del jugador</h3>
+      <h3>Establecer el comportamiento del reproductor</h3>
       <p>La configuración del reproductor se puede configurar para personalizar el comportamiento del reproductor. Están disponibles las siguientes configuraciones:</p>
       <ul>
         <li><strong>Cuando se completa la reproducción de video</strong> determina qué sucede cuando un video termina de reproducirse:
           <ul>
             <li><strong>Mostrar el estado "Después de jugar" para la experiencia</strong> - Cuando se selecciona, la experiencia ingresará al <strong>DESPUÉS DEL JUEGO</strong> indicar cuándo se completa un video.</li>
-            <li><strong>Permanecer en el video actual</strong> - Cuando se selecciona, la experiencia permanecerá en el <strong> JUGANDO</strong> indicar cuándo se completa un video. Seleccione esta opción para mostrar la pantalla final personalizada (configurada en el módulo Jugadores) que está configurada para el reproductor. Componentes mostrados durante el <strong>JUGANDO</strong> El estado también permanecerá visible. Esta opción tiene el efecto secundario de eliminar eficazmente el<strong> DESPUÉS DEL JUEGO</strong> Estado de la experiencia.</li>
+            <li><strong>Permanecer en el video actual</strong> - Cuando se selecciona, la experiencia permanecerá en el <strong> JUGANDO</strong> indicar cuándo se completa un video. Seleccione esta opción para mostrar la pantalla final personalizada (configurada en el módulo reproductores) que está configurada para el reproductor. Componentes mostrados durante el <strong>JUGANDO</strong> El estado también permanecerá visible. Esta opción tiene el efecto secundario de eliminar eficazmente el<strong> DESPUÉS DEL JUEGO</strong> Estado de la experiencia.</li>
           </ul>
         </li>
         <li><strong>Habilite la reproducción en línea en dispositivos iOS</strong> - Si está marcado, habilita la reproducción en línea en dispositivos iOS cuando se usa Brightcove Player versión 5.10.5 o más reciente.</li>
@@ -46,26 +46,26 @@ description: In this topic you will learn how to customize the settings for an I
     </div>
     <div class="BCL-subsection">
       <h3>Trabajar con cuentas con IP restringida</h3>
-      <p><a href="https://player.support.brightcove.com/content-protection/restricting-video-playback-using-ip-address.html">Cuentas con IP restringida</a> fuera de Norteamérica requieren la modificación de la API de reproducción <code translate="No">base_url</code> en el reproductor. Las experiencias en la página copiarán esto <code translate="No">base_url</code> del jugador cuando se crea la experiencia y cuando se selecciona un jugador para la experiencia. Si el <code translate="No">base_url</code> en un reproductor para una experiencia existente, la Galería no actualizará automáticamente este valor ya que no sabemos que cambió. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa:</p>
+      <p><a href="https://player.support.brightcove.com/content-protection/restricting-video-playback-using-ip-address.html">Cuentas con IP restringida</a> fuera de Norteamérica requieren la modificación de la API de reproducción <code translate="No">base_url</code> en el reproductor. Las experiencias en la página copiarán esto <code translate="No">base_url</code> del reproductor cuando se crea la experiencia y cuando se selecciona un reproductor para la experiencia. Si el <code translate="No">base_url</code> en un reproductor para una experiencia existente, la Galería no actualizará automáticamente este valor ya que no sabemos que cambió. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa:</p>
       <ol class="bcls-tasklist-restart">
         <li>Vaya a la página Configuración del reproductor para ver la experiencia.</li>
-        <li>Seleccione un jugador diferente al que está seleccionado actualmente.</li>
-        <li>Vuelva a seleccionar el jugador inicial.</li>
+        <li>Seleccione un reproductor diferente al que está seleccionado actualmente.</li>
+        <li>Vuelva a seleccionar el reproductor inicial.</li>
         <li><strong>Ahorrar</strong> y entonces <strong>publicar</strong> la experiencia.</li>
       </ol>
-      <p>Esto actualizará el <code translate="No">base_url</code> para que la experiencia coincida con la del jugador inicial.</p>
+      <p>Esto actualizará el <code translate="No">base_url</code> para que la experiencia coincida con la del reproductor inicial.</p>
     </div>
     <p>Cuando termine, haga clic en <strong>Ahorrar</strong> para guardar los cambios.</p>
     <div class="BCL-subsection">
-      <h3>Trabajar con jugadores restringidos por dominio</h3>
-      <p>&nbsp;Los jugadores con dominio restringido requieren la modificación de la clave de política&nbsp;en el reproductor. Las experiencias en la página copiarán esto <font face="monospace">policy_key</font>&nbsp;del jugador cuando se crea la experiencia y cuando se selecciona un jugador para la experiencia. Si el&nbsp;<code translate="No">policy_key</code>&nbsp;en un reproductor para una experiencia existente, la Galería no actualizará automáticamente este valor ya que no sabemos que cambió. Como solución alternativa, los editores deben seguir estos pasos si actualizan su lista de dominios aprobados:</p>
+      <h3>Trabajar con reproductores restringidos por dominio</h3>
+      <p>&nbsp;Los reproductores con dominio restringido requieren la modificación de la clave de política&nbsp;en el reproductor. Las experiencias en la página copiarán esto <font face="monospace">policy_key</font>&nbsp;del reproductor cuando se crea la experiencia y cuando se selecciona un reproductor para la experiencia. Si el&nbsp;<code translate="No">policy_key</code>&nbsp;en un reproductor para una experiencia existente, la Galería no actualizará automáticamente este valor ya que no sabemos que cambió. Como solución alternativa, los editores deben seguir estos pasos si actualizan su lista de dominios aprobados:</p>
       <ol class="bcls-tasklist-restart">
         <li>Vaya a la página Configuración del reproductor para ver la experiencia.</li>
-        <li>Seleccione un jugador diferente al que está seleccionado actualmente.</li>
-        <li>Vuelva a seleccionar el jugador inicial.</li>
+        <li>Seleccione un reproductor diferente al que está seleccionado actualmente.</li>
+        <li>Vuelva a seleccionar el reproductor inicial.</li>
         <li><strong>Ahorrar</strong> y entonces <strong>publicar</strong> la experiencia.</li>
       </ol>
-      <p>Esto actualizará el <code translate="No">policy_key</code>&nbsp;para que la experiencia coincida con la del jugador inicial.</p>
+      <p>Esto actualizará el <code translate="No">policy_key</code>&nbsp;para que la experiencia coincida con la del reproductor inicial.</p>
     </div>
     <p>Cuando termine, haga clic en <strong>Ahorrar</strong> para guardar los cambios.</p>
   </section>

@@ -1,5 +1,6 @@
 ---
-title: Exportación de datos del visor de eventos virtuales descripción: Este tema explica cómo exportar los datos del visor de eventos virtuales para un evento virtual utilizando la API de Analytics.
+title: Exportación de datos del visor de eventos virtuales
+description: 'Este tema explica cómo exportar los datos del visor de eventos virtuales para un evento virtual utilizando la API de Analytics.'
 parent: Virtual Event 
 grandparent: Experiences
 description: In this topic you will learn how to export virtual event viewer data.
@@ -106,7 +107,7 @@ layout: staging
 	</section>
 	<section class="bcls-section">
 		<h2 id="fields">Campos</h2>
-		<h3>Recopilado directamente del jugador</h3>
+		<h3>Recopilado directamente del reproductor</h3>
 		<ul>
 			<li><code translate="no">espectador</code>: Visor de eventos (ID de SSO o ID de dispositivo o cadena única basada en el agente de usuario y la IP), tomado del <code translate="no">usuario</code> campo</li>
 			<!-- <li><code translate="no">application</code>: virtual event experience id, if null default value = <code translate="no">account_id</code></li> -->
@@ -119,7 +120,7 @@ layout: staging
 		</ul>
 		<h3>Métricas agregadas</h3>
 		<ul>
-			<li><code translate="no">video_view</code> : el número total de veces <code translate="no">video_view</code> fue enviado por el jugador (tenga en cuenta que <code translate="no">video_view</code> es <strong>no</strong> enviado cuando el espectador hace una pausa y reinicia un video, o mira el video varias veces sin actualizar la página)</li>
+			<li><code translate="no">video_view</code> : el número total de veces <code translate="no">video_view</code> fue enviado por el reproductor (tenga en cuenta que <code translate="no">video_view</code> es <strong>no</strong> enviado cuando el espectador hace una pausa y reinicia un video, o mira el video varias veces sin actualizar la página)</li>
 		</ul>
 		<h3>Campos calculados</h3>
 		<ul>

@@ -105,7 +105,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+              <option value="https://player.support.brightcove.com">Desarrollo de reproductores de Brightcove</option>
             
           
             
@@ -558,7 +558,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <p>La configuración controla varios aspectos de una experiencia en página. Están disponibles los siguientes ajustes:</p>
     <ul>
-      <li>Jugador<a href="#playersettings"></a></li>
+      <li>reproductor<a href="#playersettings"></a></li>
       <li>Vídeo<a href="#videosettings"></a></li>
       <li>Social<a href="#social"></a></li>
       <li><a href="#seo">SEO</a></li>
@@ -569,16 +569,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="playersettings">Configurar los ajustes del reproductor</h2>
-    <p>La configuración del jugador controla el jugador que se utiliza y el comportamiento del jugador para la experiencia. Para configurar los ajustes del reproductor, edite la experiencia y, a continuación, haga clic en <strong>AJUSTES &gt; Reproductor</strong> en la navegación izquierda.</p>
+    <p>La configuración del reproductor controla el reproductor que se utiliza y el comportamiento del reproductor para la experiencia. Para configurar los ajustes del reproductor, edite la experiencia y, a continuación, haga clic en <strong>AJUSTES &gt; Reproductor</strong> en la navegación izquierda.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/inpage/node16793-player-settings.png"/></figure>
     <div class="BCL-subsection">
-      <h3>Selección de un jugador</h3>
-      <p>Para seleccionar un jugador para utilizarlo en la experiencia en la página, seleccione un jugador en la lista desplegable <strong>Jugadores disponibles</strong> . La lista mostrará todos los reproductores de su cuenta de Video Cloud.</p>
+      <h3>Selección de un reproductor</h3>
+      <p>Para seleccionar un reproductor para utilizarlo en la experiencia en la página, seleccione un reproductor en la lista desplegable <strong>reproductores disponibles</strong> . La lista mostrará todos los reproductores de su cuenta de Video Cloud.</p>
       <p>Después de seleccionar un reproductor, la vista previa del reproductor mostrará una vista previa del reproductor seleccionado.</p>
-      <aside class="bcls-aside bcls-aside--information">Nota: Cuando se utiliza una experiencia en página, el estilo del reproductor solo se refleja mientras se reproduce un vídeo. El estilo del jugador no se verá en los estados ANTES DE JUGAR o DESPUÉS DE JUGAR.</aside>
+      <aside class="bcls-aside bcls-aside--information">Nota: Cuando se utiliza una experiencia en página, el estilo del reproductor solo se refleja mientras se reproduce un vídeo. El estilo del reproductor no se verá en los estados ANTES DE JUGAR o DESPUÉS DE JUGAR.</aside>
     </div>
     <div class="BCL-subsection">
-      <h3>Establecer el comportamiento del jugador</h3>
+      <h3>Establecer el comportamiento del reproductor</h3>
       <p>La configuración del reproductor se puede configurar para personalizar el comportamiento del reproductor. Están disponibles los siguientes ajustes:</p>
       <ul>
         <li><strong>Cuando se completa la reproducción de vídeo</strong> determina lo que sucede cuando un vídeo termina de reproducirse:
@@ -593,26 +593,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="BCL-subsection">
       <h3>Trabajar con cuentas de IP restringidas</h3>
-      <p><a href="https://player.support.brightcove.com/content-protection/restricting-video-playback-using-ip-address.html">Las cuentas de IP restringidas</a> fuera de Norteamérica requieren la modificación de la API de reproducción <code translate="No">base_url</code> en el reproductor. Experiencias en página copiarán esto <code translate="No">base_url</code> del jugador cuando se crea la experiencia y cuando se selecciona un jugador para la experiencia. Si cambia el <code translate="No">base_url</code> en un jugador para una experiencia existente, Gallery no actualizará automáticamente este valor, ya que no sabemos que ha cambiado. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa:</p>
+      <p><a href="https://player.support.brightcove.com/content-protection/restricting-video-playback-using-ip-address.html">Las cuentas de IP restringidas</a> fuera de Norteamérica requieren la modificación de la API de reproducción <code translate="No">base_url</code> en el reproductor. Experiencias en página copiarán esto <code translate="No">base_url</code> del reproductor cuando se crea la experiencia y cuando se selecciona un reproductor para la experiencia. Si cambia el <code translate="No">base_url</code> en un reproductor para una experiencia existente, Gallery no actualizará automáticamente este valor, ya que no sabemos que ha cambiado. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa:</p>
       <ol class="bcls-tasklist-restart">
-        <li>Vaya a la página Configuración del jugador para ver la experiencia.</li>
-        <li>Seleccione un jugador diferente al que está seleccionado actualmente.</li>
-        <li>Vuelva a seleccionar el jugador inicial.</li>
+        <li>Vaya a la página Configuración del reproductor para ver la experiencia.</li>
+        <li>Seleccione un reproductor diferente al que está seleccionado actualmente.</li>
+        <li>Vuelva a seleccionar el reproductor inicial.</li>
         <li>Guarde y, a continuación, publique la experiencia.<strong></strong><strong></strong></li>
       </ol>
-      <p>Esto actualizará el <code translate="No">base_url</code> para que la experiencia coincida con la del jugador inicial.</p>
+      <p>Esto actualizará el <code translate="No">base_url</code> para que la experiencia coincida con la del reproductor inicial.</p>
     </div>
     <p>Cuando haya terminado, haga clic en Guardar para guardar los cambios.<strong></strong></p>
     <div class="BCL-subsection">
-      <h3>Trabajar con jugadores restringidos de dominio</h3>
-      <p>&nbsp;Los jugadores con dominio restringido requieren la modificación de la clave de política&nbsp;en el reproductor. Experiencias en página copiarán esta <font face="monospace">policy_key</font>&nbsp;del reproductor cuando se crea la experiencia y cuando se selecciona un jugador para la experiencia. Si cambia el&nbsp;<code translate="No">policy_key</code>&nbsp;en un jugador para una experiencia existente, Gallery no actualizará automáticamente este valor, ya que no sabemos que ha cambiado. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa si actualizan su lista de dominios aprobados:</p>
+      <h3>Trabajar con reproductores restringidos de dominio</h3>
+      <p>&nbsp;Los reproductores con dominio restringido requieren la modificación de la clave de política&nbsp;en el reproductor. Experiencias en página copiarán esta <font face="monospace">policy_key</font>&nbsp;del reproductor cuando se crea la experiencia y cuando se selecciona un reproductor para la experiencia. Si cambia el&nbsp;<code translate="No">policy_key</code>&nbsp;en un reproductor para una experiencia existente, Gallery no actualizará automáticamente este valor, ya que no sabemos que ha cambiado. Como solución alternativa, los editores deben seguir estos pasos como solución alternativa si actualizan su lista de dominios aprobados:</p>
       <ol class="bcls-tasklist-restart">
-        <li>Vaya a la página Configuración del jugador para ver la experiencia.</li>
-        <li>Seleccione un jugador diferente al que está seleccionado actualmente.</li>
-        <li>Vuelva a seleccionar el jugador inicial.</li>
+        <li>Vaya a la página Configuración del reproductor para ver la experiencia.</li>
+        <li>Seleccione un reproductor diferente al que está seleccionado actualmente.</li>
+        <li>Vuelva a seleccionar el reproductor inicial.</li>
         <li>Guarde y, a continuación, publique la experiencia.<strong></strong><strong></strong></li>
       </ol>
-      <p>Esto actualizará el <code translate="No">policy_key</code>&nbsp;para que la experiencia coincida con la del jugador inicial.</p>
+      <p>Esto actualizará el <code translate="No">policy_key</code>&nbsp;para que la experiencia coincida con la del reproductor inicial.</p>
     </div>
     <p>Cuando haya terminado, haga clic en Guardar para guardar los cambios.<strong></strong></p>
   </section>
@@ -655,7 +655,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <h3>Mostrar</h3>
       <p>La configuración Visualización determina cómo se muestran los iconos sociales. Cuando se selecciona la opción <strong>Compartir</strong> (<img alt="" src="/assets/images/experiences/inpage/node16793-share-icon.png"/>) , los iconos para compartir se deslizarán desde el lado derecho del reproductor.</p>
       <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/inpage/node16793-share-settings.png"/></figure>
-      <p>Cuando se selecciona la opción de iconos sociales (<img alt="" src="/assets/images/experiences/inpage/node16793-social-icon.png"/>) , los iconos sociales aparecerán encima del jugador.</p>
+      <p>Cuando se selecciona la opción de iconos sociales (<img alt="" src="/assets/images/experiences/inpage/node16793-social-icon.png"/>) , los iconos sociales aparecerán encima del reproductor.</p>
       <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/inpage/node16793-social-icons.png"/></figure>
     </div>
     <div class="BCL-subsection">
